@@ -7,7 +7,32 @@ namespace Working_with_Control_Flow_Exercises
     {
         static void Main(string[] args)
         {
-            Exercise1();
+            //Exercise1();
+            Exercise2();
+        }
+
+        private static void Exercise2()
+        {
+            /*Write a program and continuously ask the user to enter a number or "ok" to exit.
+             Calculate the sum of all the previously entered numbers and display it on the console.
+             */
+
+            var isUserDone = false;
+            var sum = 0;
+
+            while (!isUserDone)
+            {
+                Console.WriteLine("Enter a new number, or type \"ok\" to exit" );
+                var userInput = Console.ReadLine();
+                if (userInput == "ok")
+                {
+                    isUserDone = true;
+                    break;
+                }
+                sum += Convert.ToInt32(userInput);
+            }
+
+            Console.WriteLine("Your sum is: " + sum);
         }
 
         private static void Exercise1()
@@ -36,5 +61,7 @@ namespace Working_with_Control_Flow_Exercises
                 Console.Write(nonDivisibleNumber + ",");
             }
         }
+
+
     }
 }
