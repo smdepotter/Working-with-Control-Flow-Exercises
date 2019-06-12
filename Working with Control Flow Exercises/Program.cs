@@ -8,7 +8,30 @@ namespace Working_with_Control_Flow_Exercises
         static void Main(string[] args)
         {
             //Exercise1();
-            Exercise2();
+            //Exercise2();
+            Exercise3();
+        }
+
+        private static void Exercise3()
+        {
+            /* Write a program and ask the user to enter a number.
+             Compute the factorial of the number and print it on the console.
+             For example, if the user enters 5, the program should calculate 5 x 4 x 3 x 2 x 1 
+             and display it as 5! = 120.
+             */
+
+            Console.WriteLine("Enter a Number");
+
+            var originalUserInput = Convert.ToInt32(Console.ReadLine());
+            var userInput = originalUserInput;
+            var factorial = 1;
+
+            for (int i = 1; i <= userInput; i++)
+            {
+                factorial *= i;
+            }
+            
+            Console.WriteLine("{0}! = {1}", originalUserInput, factorial);
         }
 
         private static void Exercise2()
