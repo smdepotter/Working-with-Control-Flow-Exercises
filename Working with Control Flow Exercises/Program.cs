@@ -9,7 +9,38 @@ namespace Working_with_Control_Flow_Exercises
         {
             //Exercise1();
             //Exercise2();
-            Exercise3();
+            //Exercise3();
+            Exercise4();
+        }
+
+        private static void Exercise4()
+        {
+            /*Write a program that picks a random number between 1 and 10.
+             Give the user 4 chances to guess the number. If the user guesses
+             the number, display “You won"; otherwise, display “You lost".
+             (To make sure the program is behaving correctly, you can display
+             the secret number on the console first.)
+             */
+
+            var rand = new Random();
+            var randomNumber = rand.Next(1, 10);
+            Console.WriteLine("The Correct Guess: " + randomNumber);
+
+            for (int i = 4; i > 0; i--)
+            {
+                //added func, give user attempt counter
+                Console.WriteLine("What is your guess? You have {0} tries left", i);
+                var userInput = Convert.ToInt32(Console.ReadLine());
+                if (userInput == randomNumber)
+                {
+                    Console.WriteLine("You won");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("You lost");
+                }
+            }
         }
 
         private static void Exercise3()
