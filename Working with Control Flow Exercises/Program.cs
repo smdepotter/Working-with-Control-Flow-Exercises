@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Working_with_Control_Flow_Exercises
 {
@@ -10,7 +11,28 @@ namespace Working_with_Control_Flow_Exercises
             //Exercise1();
             //Exercise2();
             //Exercise3();
-            Exercise4();
+            //Exercise4();
+            Exercise5();
+        }
+
+        private static void Exercise5()
+        {
+            /*Write a program and ask the user to enter a series of numbers separated by comma.
+             Find the maximum of the numbers and display it on the console. For example, 
+             if the user enters “5, 3, 8, 1, 4", the program should display 8.
+             */
+
+            Console.WriteLine("Enter numbers separated by comma");
+
+            var userInput = Console.ReadLine();
+
+            var numbers = userInput.Split(",").Select(Int32.Parse).ToList();
+
+            numbers.Sort();
+
+            Console.WriteLine("Your largest number: " + numbers.Last());
+
+
         }
 
         private static void Exercise4()
